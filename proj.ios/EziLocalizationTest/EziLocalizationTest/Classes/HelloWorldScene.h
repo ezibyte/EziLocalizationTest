@@ -5,6 +5,11 @@
 
 class HelloWorld : public cocos2d::CCLayer
 {
+    
+    void requestForUserDetails();
+    
+    cocos2d::CCLabelTTF* mTestLabel;
+    
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
     virtual bool init();
@@ -17,6 +22,11 @@ public:
 
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(HelloWorld);
+    
+    static HelloWorld*  sharedObject();
+    
+    void updateTestLabel(std::wstring dataWString);
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__

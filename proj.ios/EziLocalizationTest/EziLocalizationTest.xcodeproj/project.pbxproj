@@ -220,6 +220,8 @@
 		CB0F82B317469F4300F5D174 /* cocos2dx-ext_public.defines.txt in Resources */ = {isa = PBXBuildFile; fileRef = CB0F82B217469F4300F5D174 /* cocos2dx-ext_public.defines.txt */; };
 		CB0F82B917469F4300F5D174 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB0F82B817469F4300F5D174 /* AppDelegate.cpp */; };
 		CB0F82BC17469F4300F5D174 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB0F82BB17469F4300F5D174 /* HelloWorldScene.cpp */; };
+		CB0F82C71746A44000F5D174 /* IOSLocalizationTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = CB0F82C61746A44000F5D174 /* IOSLocalizationTest.mm */; };
+		CB0F82C91746A4D600F5D174 /* CBridge.h in Sources */ = {isa = PBXBuildFile; fileRef = CB0F82C81746A46A00F5D174 /* CBridge.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -690,6 +692,9 @@
 		CB0F82B817469F4300F5D174 /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		CB0F82BA17469F4300F5D174 /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		CB0F82BB17469F4300F5D174 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		CB0F82C51746A44000F5D174 /* IOSLocalizationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOSLocalizationTest.h; path = ios/IOSLocalizationTest.h; sourceTree = "<group>"; };
+		CB0F82C61746A44000F5D174 /* IOSLocalizationTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = IOSLocalizationTest.mm; path = ios/IOSLocalizationTest.mm; sourceTree = "<group>"; };
+		CB0F82C81746A46A00F5D174 /* CBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBridge.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -784,6 +789,8 @@
 				CB0F800517469F3F00F5D174 /* RootViewController.h */,
 				CB0F800617469F3F00F5D174 /* RootViewController.mm */,
 				CB0F800817469F3F00F5D174 /* main.m */,
+				CB0F82C51746A44000F5D174 /* IOSLocalizationTest.h */,
+				CB0F82C61746A44000F5D174 /* IOSLocalizationTest.mm */,
 			);
 			name = ios;
 			sourceTree = "<group>";
@@ -1690,6 +1697,7 @@
 		CB0F82B617469F4300F5D174 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CB0F82C81746A46A00F5D174 /* CBridge.h */,
 				CB0F82B717469F4300F5D174 /* AppDelegate.h */,
 				CB0F82B817469F4300F5D174 /* AppDelegate.cpp */,
 				CB0F82BA17469F4300F5D174 /* HelloWorldScene.h */,
@@ -1773,6 +1781,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB0F82C91746A4D600F5D174 /* CBridge.h in Sources */,
 				CB0F800417469F3F00F5D174 /* AppController.mm in Sources */,
 				CB0F800717469F3F00F5D174 /* RootViewController.mm in Sources */,
 				CB0F800917469F3F00F5D174 /* main.m in Sources */,
@@ -1961,6 +1970,7 @@
 				CB0F82AD17469F4300F5D174 /* CCPhysicsSprite.cpp in Sources */,
 				CB0F82B917469F4300F5D174 /* AppDelegate.cpp in Sources */,
 				CB0F82BC17469F4300F5D174 /* HelloWorldScene.cpp in Sources */,
+				CB0F82C71746A44000F5D174 /* IOSLocalizationTest.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

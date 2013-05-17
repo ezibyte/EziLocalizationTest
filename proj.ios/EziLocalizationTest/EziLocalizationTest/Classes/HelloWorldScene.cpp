@@ -1,8 +1,20 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 
+#include "CBridge.h"
+
 using namespace cocos2d;
 using namespace CocosDenshion;
+
+static HelloWorld* sharedHelloWorld;
+
+void internalUserDetailCallback(std::wstring data)
+{
+    CCLOG("I am in internalUserDetailCallback");
+    
+    HelloWorld::sharedObject()->updateTestLabel(data);
+}
+
 
 CCScene* HelloWorld::scene()
 {
@@ -11,6 +23,7 @@ CCScene* HelloWorld::scene()
     
     // 'layer' is an autorelease object
     HelloWorld *layer = HelloWorld::create();
+    sharedHelloWorld = layer;
 
     // add layer as a child to scene
     scene->addChild(layer);
@@ -51,25 +64,18 @@ bool HelloWorld::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
-    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Thonburi", 34);
+    mTestLabel = CCLabelTTF::create("dßdýdうd⬅", "Thonburi", 34);
 
     // ask director the window size
     CCSize size = CCDirector::sharedDirector()->getWinSize();
 
     // position the label on the center of the screen
-    pLabel->setPosition( ccp(size.width / 2, size.height - 20) );
+    mTestLabel->setPosition( ccp(size.width / 2, size.height - 20) );
 
     // add the label as a child to this layer
-    this->addChild(pLabel, 1);
+    this->addChild(mTestLabel, 1);
 
-    // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    pSprite->setPosition( ccp(size.width/2, size.height/2) );
-
-    // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+    this->requestForUserDetails();
     
     return true;
 }
@@ -81,4 +87,26 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+HelloWorld*  HelloWorld::sharedObject()
+{
+    if (sharedHelloWorld == NULL)
+    {
+        return NULL;
+    }
+    return sharedHelloWorld;
+}
+
+
+void HelloWorld::requestForUserDetails()
+{
+    LocalizationWrapper::getUserDetails(internalUserDetailCallback);
+}
+
+
+void HelloWorld::updateTestLabel(std::wstring dataWString)
+{
+    // Here we have to update the test label.
+    CCLOG("I am in updateTestLabel");
 }
