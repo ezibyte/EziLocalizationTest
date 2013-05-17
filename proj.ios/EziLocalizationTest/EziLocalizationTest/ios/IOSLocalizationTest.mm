@@ -59,6 +59,7 @@ void LocalizationWrapper::getUserDetails(LocalizationWrapper::UserDetailCallback
             outStr = NULL;
         }
     }
+    
     localeinfo = setlocale(LC_CTYPE, oldlocaleinfo);
     std::wstring testString(outStr);
     if (mUserCallback)
