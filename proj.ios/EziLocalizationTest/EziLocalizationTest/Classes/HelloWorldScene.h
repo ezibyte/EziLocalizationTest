@@ -7,8 +7,10 @@ class HelloWorld : public cocos2d::CCLayer
 {
     
     void requestForUserDetails();
+    void requestFriendDetails();
     
     cocos2d::CCLabelTTF* mTestLabel;
+    cocos2d::CCLabelTTF* mFriendLabel;
     
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
@@ -26,6 +28,7 @@ public:
     static HelloWorld*  sharedObject();
     
     void updateTestLabel(std::wstring dataWString);
+    void updateFriendLabel(std::string dataString);
 
 };
 

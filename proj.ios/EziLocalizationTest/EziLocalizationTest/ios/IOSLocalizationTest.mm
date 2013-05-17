@@ -16,7 +16,7 @@
 
 static IOSLocalizationTest* testManager;
 
-@synthesize mUserCallback;
+@synthesize mUserCallback, mFriendCallback;
 
 void LocalizationWrapper::getUserDetails(LocalizationWrapper::UserDetailCallback callback)
 {
@@ -25,6 +25,16 @@ void LocalizationWrapper::getUserDetails(LocalizationWrapper::UserDetailCallback
     [[IOSLocalizationTest sharedTest] setMUserCallback:callback];
     [[IOSLocalizationTest sharedTest] getUserDetails];
 }
+
+void LocalizationWrapper::getFriendDetails(LocalizationWrapper::FriendDetailCallback callback)
+{
+    NSLog(@"Inside IOS");
+    
+    [[IOSLocalizationTest sharedTest] setMFriendCallback:callback];
+    [[IOSLocalizationTest sharedTest] getFriendDetails];
+}
+
+
 
 +(IOSLocalizationTest*) sharedTest
 {
@@ -54,7 +64,8 @@ void LocalizationWrapper::getUserDetails(LocalizationWrapper::UserDetailCallback
     if (outStr) {
         memset(outStr, 0, size * sizeof(wchar_t));
         size_t ret = mbstowcs(outStr, cString, size+1);
-        if (ret == -1) {
+        if (ret == -1)
+        {
             delete[] outStr;
             outStr = NULL;
         }
@@ -65,6 +76,16 @@ void LocalizationWrapper::getUserDetails(LocalizationWrapper::UserDetailCallback
     if (mUserCallback)
     {
         (mUserCallback)(testString);
+    }
+}
+
+-(void)getFriendDetails
+{
+    std::string specailString = "dßdýdうd⬅";
+    
+    if (mFriendCallback)
+    {
+        (mFriendCallback)(specailString);
     }
 }
 

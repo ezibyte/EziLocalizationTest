@@ -13,7 +13,11 @@ namespace LocalizationWrapper
 {
 
     typedef void (*UserDetailCallback)(std::wstring);
+    typedef void (*FriendDetailCallback)(std::string);
+    
+    
     void getUserDetails(UserDetailCallback callback);
+    void getFriendDetails(FriendDetailCallback callback);
 
 };
     

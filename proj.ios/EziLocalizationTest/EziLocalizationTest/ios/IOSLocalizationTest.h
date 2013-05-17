@@ -18,8 +18,10 @@
 +(IOSLocalizationTest*) sharedTest;
 
 @property (assign) LocalizationWrapper::UserDetailCallback mUserCallback;
+@property (assign) LocalizationWrapper::FriendDetailCallback mFriendCallback;
 
 -(void)getUserDetails;
+-(void)getFriendDetails;
 
 @end
 
