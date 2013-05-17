@@ -11,6 +11,8 @@ class HelloWorld : public cocos2d::CCLayer
     
     cocos2d::CCLabelTTF* mTestLabel;
     cocos2d::CCLabelTTF* mFriendLabel;
+    cocos2d::CCLabelBMFont* mBMTestLabel;
+    cocos2d::CCLabelBMFont* mBMFriendLabel;
     
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)

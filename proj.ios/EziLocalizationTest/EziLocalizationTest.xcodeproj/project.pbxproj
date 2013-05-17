@@ -222,6 +222,8 @@
 		CB0F82BC17469F4300F5D174 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB0F82BB17469F4300F5D174 /* HelloWorldScene.cpp */; };
 		CB0F82C71746A44000F5D174 /* IOSLocalizationTest.mm in Sources */ = {isa = PBXBuildFile; fileRef = CB0F82C61746A44000F5D174 /* IOSLocalizationTest.mm */; };
 		CB0F82C91746A4D600F5D174 /* CBridge.h in Sources */ = {isa = PBXBuildFile; fileRef = CB0F82C81746A46A00F5D174 /* CBridge.h */; };
+		CBC309991746C925004FF5B2 /* bmftest.fnt in Resources */ = {isa = PBXBuildFile; fileRef = CBC309971746C925004FF5B2 /* bmftest.fnt */; };
+		CBC3099A1746C925004FF5B2 /* bmftest.png in Resources */ = {isa = PBXBuildFile; fileRef = CBC309981746C925004FF5B2 /* bmftest.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -695,6 +697,8 @@
 		CB0F82C51746A44000F5D174 /* IOSLocalizationTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IOSLocalizationTest.h; path = ios/IOSLocalizationTest.h; sourceTree = "<group>"; };
 		CB0F82C61746A44000F5D174 /* IOSLocalizationTest.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = IOSLocalizationTest.mm; path = ios/IOSLocalizationTest.mm; sourceTree = "<group>"; };
 		CB0F82C81746A46A00F5D174 /* CBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBridge.h; sourceTree = "<group>"; };
+		CBC309971746C925004FF5B2 /* bmftest.fnt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bmftest.fnt; sourceTree = "<group>"; };
+		CBC309981746C925004FF5B2 /* bmftest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bmftest.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -768,6 +772,8 @@
 				CB0F7FEA17469F3E00F5D174 /* CloseNormal.png */,
 				CB0F7FEC17469F3E00F5D174 /* CloseSelected.png */,
 				CB0F7FEE17469F3E00F5D174 /* Default.png */,
+				CBC309971746C925004FF5B2 /* bmftest.fnt */,
+				CBC309981746C925004FF5B2 /* bmftest.png */,
 				CB0F7FF017469F3E00F5D174 /* HelloWorld.png */,
 				CB0F7FF217469F3E00F5D174 /* Icon-72.png */,
 				CB0F7FF417469F3F00F5D174 /* Icon-Small-50.png */,
@@ -1771,6 +1777,8 @@
 				CB0F820517469F4200F5D174 /* project.pbxproj in Resources */,
 				CB0F82B117469F4300F5D174 /* cocos2dx-ext.mkf in Resources */,
 				CB0F82B317469F4300F5D174 /* cocos2dx-ext_public.defines.txt in Resources */,
+				CBC309991746C925004FF5B2 /* bmftest.fnt in Resources */,
+				CBC3099A1746C925004FF5B2 /* bmftest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2106,6 +2114,7 @@
 				CB0F82C117469F4300F5D174 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -92,19 +92,24 @@ bool HelloWorld::init()
     mFriendLabel = CCLabelTTF::create("Friend Test Data", "Thonburi", 34);
     
 
+    mBMFriendLabel = CCLabelBMFont::create("Test BM Friend Label", "bmftest.fnt");
+    mBMTestLabel = CCLabelBMFont::create("Test BM Label", "bmftest.fnt");
 
     // ask director the window size
     CCSize size = CCDirector::sharedDirector()->getWinSize();
 
     // position the label on the center of the screen
-    mTestLabel->setPosition( ccp(size.width / 2, size.height - 20) );
+    mTestLabel->setPosition( ccp(size.width * 0.75, size.height - 20) );
+    mFriendLabel->setPosition( ccp(size.width * 0.75, size.height/2) );
     
-    mFriendLabel->setPosition( ccp(size.width / 2, size.height/2) );
-
+    mBMTestLabel->setPosition(ccp(size.width * 0.25, size.height - 20));
+    mBMFriendLabel->setPosition( ccp(size.width * 0.25, size.height/2) );
     // add the label as a child to this layer
     this->addChild(mTestLabel, 1);
-
     this->addChild(mFriendLabel, 1);
+    
+    this->addChild(mBMTestLabel, 1);
+    this->addChild(mBMFriendLabel, 1);
     
     return true;
 }
@@ -157,6 +162,11 @@ void HelloWorld::updateTestLabel(std::wstring dataWString)
         CCLOG("mTest Label is NULL");
     }
     
+    if (mBMTestLabel)
+    {
+        mBMTestLabel->setString(resultData.c_str());
+    }
+    
     
     
     CCLOG("I am in updateTestLabel");
@@ -169,5 +179,10 @@ void HelloWorld::updateFriendLabel(std::string dataString)
     if (mFriendLabel)
     {
         this->mFriendLabel->setString(dataString.c_str());
+    }
+    
+    if (mBMFriendLabel)
+    {
+        mBMFriendLabel->setString(dataString.c_str());
     }
 }
