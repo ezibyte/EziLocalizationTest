@@ -64,7 +64,7 @@ bool HelloWorld::init()
 
     // add a label shows "Hello World"
     // create and initialize a label
-    mTestLabel = CCLabelTTF::create("dßdýdうd⬅", "Thonburi", 34);
+    mTestLabel = CCLabelTTF::create("Test Data", "Thonburi", 34);
 
     // ask director the window size
     CCSize size = CCDirector::sharedDirector()->getWinSize();
@@ -75,17 +75,19 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(mTestLabel, 1);
 
-    this->requestForUserDetails();
+    
     
     return true;
 }
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
-    CCDirector::sharedDirector()->end();
+    this->requestForUserDetails();
+    
+    //CCDirector::sharedDirector()->end();
 
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
+    //exit(0);
 #endif
 }
 
@@ -108,5 +110,22 @@ void HelloWorld::requestForUserDetails()
 void HelloWorld::updateTestLabel(std::wstring dataWString)
 {
     // Here we have to update the test label.
+    
+    std::string resultData = "";
+    resultData.assign(dataWString.begin(), dataWString.end());
+    
+    if (this->mTestLabel)
+    {
+        this->mTestLabel->setString(resultData.c_str());
+    }
+    else
+    {
+        CCLOG("mTest Label is NULL");
+    }
+    
+    
+    
     CCLOG("I am in updateTestLabel");
+    
+    
 }

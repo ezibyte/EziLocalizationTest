@@ -40,7 +40,7 @@ void LocalizationWrapper::getUserDetails(LocalizationWrapper::UserDetailCallback
 {
     // We have write our test here.
     
-    std::wstring testString = L"dßdýdうd⬅";
+    std::wstring testString = L"Paras & Petr";
     
     if (mUserCallback)
     {
