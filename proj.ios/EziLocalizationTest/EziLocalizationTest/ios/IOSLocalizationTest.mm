@@ -57,7 +57,9 @@ void LocalizationWrapper::getFriendDetails(LocalizationWrapper::FriendDetailCall
     char * oldlocaleinfo = setlocale(LC_CTYPE, "");
     char * localeinfo = setlocale(LC_CTYPE, "C");//UTF-8
     
-    printf ("Locale is: %s\n", localeinfo );
+    printf ("Old Locale was: %s\n", oldlocaleinfo);
+    printf ("Current Locale is: %s\n", oldlocaleinfo);
+    
     wchar_t *outStr = NULL;
     size_t size = mbstowcs(NULL, cString, 0);
     outStr = new wchar_t[size + 1];
@@ -72,6 +74,7 @@ void LocalizationWrapper::getFriendDetails(LocalizationWrapper::FriendDetailCall
     }
     
     localeinfo = setlocale(LC_CTYPE, oldlocaleinfo);
+    printf ("Current after conversion is: %s\n", localeinfo);
     std::wstring testString(outStr);
     if (mUserCallback)
     {
@@ -81,8 +84,35 @@ void LocalizationWrapper::getFriendDetails(LocalizationWrapper::FriendDetailCall
 
 -(void)getFriendDetails
 {
-    std::string specailString = "dßdýdうd⬅";
+    NSString* specialString = [NSString stringWithFormat:@"dßdýdうd⬅", nil];
     
+    const char *cString = [specialString cStringUsingEncoding:NSUTF8StringEncoding];
+    char * oldlocaleinfo = setlocale(LC_CTYPE, "");
+    char * localeinfo = setlocale(LC_CTYPE, "C");//UTF-8
+    
+    printf ("Old Locale was: %s\n", oldlocaleinfo);
+    printf ("Current Locale is: %s\n", oldlocaleinfo);
+    
+    wchar_t *outStr = NULL;
+    size_t size = mbstowcs(NULL, cString, 0);
+    outStr = new wchar_t[size + 1];
+    if (outStr) {
+        memset(outStr, 0, size * sizeof(wchar_t));
+        size_t ret = mbstowcs(outStr, cString, size+1);
+        if (ret == -1)
+        {
+            delete[] outStr;
+            outStr = NULL;
+        }
+    }
+    
+    localeinfo = setlocale(LC_CTYPE, oldlocaleinfo);
+    printf ("Current after conversion is: %s\n", localeinfo);
+    std::wstring testString(outStr);
+    
+    std::string specailString = "";
+    
+    specailString.assign(testString.begin(), testString.end());
     if (mFriendCallback)
     {
         (mFriendCallback)(specailString);
